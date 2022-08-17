@@ -11,20 +11,17 @@
 // when its not enter that into new Array!
 
 
-const removeFromArray = function() { const array = args[0];
+const removeFromArray = function() {
+let array =[];
 
-    const newArray = [];
-   
-    array.forEach((item) => {
-      // push every element into the new array
-      // UNLESS it is included in the function arguments
-      // so we create a new array with every item, except those that should be removed
-      if (!args.includes(item)) {
-        newArray.push(item);
-      }
-    });
-    // and return that array
-    return newArray;
+for(i=1;i<arguments.length;i++){
+    for(j=0;j<arguments[0].length;j++){
+        if(arguments[i] !== arguments[0][j]){
+            array.push(arguments[0][j]);
+        }
+    }
+}
+return array;
 };
 // Do not edit below this line
 module.exports = removeFromArray;
